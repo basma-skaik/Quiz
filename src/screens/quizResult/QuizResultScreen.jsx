@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const OnBoardingScreen = () => {
+const QuizResultScreen = () => {
   return (
     <View>
-      <Text>OnBoardingScreen</Text>
+      <Text>QuizResultScreen</Text>
     </View>
   )
 }
 
-export default OnBoardingScreen
+export default QuizResultScreen
 
 const styles = StyleSheet.create({})
