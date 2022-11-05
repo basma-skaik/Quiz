@@ -49,7 +49,7 @@ const FiltersScreen = () => {
           handleChange={setDifficulty}
           label="Select Difficulty:"
         />
-        <SelectInpu
+        <SelectInput
           options={QuestionsTypeOptions}
           handleChange={setQuestionsType}
           label="Select Type:"
