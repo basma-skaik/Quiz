@@ -49,12 +49,12 @@ const FiltersScreen = () => {
           handleChange={setDifficulty}
           label="Select Difficulty:"
         />
-        <SelectInput
+        <SelectInpu
           options={QuestionsTypeOptions}
           handleChange={setQuestionsType}
           label="Select Type:"
         />
-        <Button lable={"Start"}/>
+        <Button lable={'Start'} />
       </View>
     </TouchableWithoutFeedback>
   );
