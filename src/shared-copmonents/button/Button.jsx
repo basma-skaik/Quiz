@@ -6,14 +6,13 @@ import {
 } from 'react-native';
 import React from 'react';
 
-const Button = ({lable, pressedScreen}) => {
+const Button = ({lable, action}) => {
   const width = useWindowDimensions();
   return (
     // <TouchableOpacity style={[styles.btnStyle, width]}>
-    <TouchableOpacity style={styles.btnStyle}>
-      <Text style={styles.btnLabel} onPress={{pressedScreen}}>
-        {lable}
-      </Text>
+    // ()=>
+    <TouchableOpacity onPress={action} style={styles.btnStyle}>
+      <Text style={styles.btnLabel}>{lable}</Text>
     </TouchableOpacity>
   );
 };
