@@ -1,20 +1,31 @@
-import {StyleSheet, Text, View, useWindowDimensions} from 'react-native';
+import {StyleSheet, Text, View, Image} from 'react-native';
 import React from 'react';
-import Button from '../../shared-copmonents/button/Button';
-import {useNavigation} from '@react-navigation/native';
+import ListItem from './component/listItem';
+import Button from './component/Button/Button';
 
 const OnBoardingScreen = () => {
-  const window = useWindowDimensions();
-  const navigation = useNavigation();
+  const listString = [
+    '• Multiple Ways Of Testing 💡',
+    '• Millions Of Questions 👀',
+    '• More And More Categories 📚',
+    '• Clean And Uniqe Style 💅',
+  ];
   return (
-    <View style={[styles.container, window.height]}>
-      <Text>OnBoardingScreen</Text>
-      <View style={styles.btnContainer}>
-        <Button
-          lable={'Get started'}
-          action={() => navigation.navigate('QuizScreen')}
-        />
+    <View style={styles.container}>
+      <Image
+        source={require('../../../assets/img/Illustration.png')}
+        style={styles.img}
+        resizeMode={'contain'}
+      />
+      <View>
+        <Text style={styles.title}>Test Your Knowledge</Text>
       </View>
+      <View style={styles.list}>
+        {listString.map((item, index) => (
+          <ListItem key={index} text={item} />
+        ))}
+      </View>
+      <Button buttonStyle={styles.button} title="Get Started" />
     </View>
   );
 };
@@ -23,11 +34,23 @@ export default OnBoardingScreen;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
     alignItems: 'center',
+    flex: 1,
   },
-  btnContainer: {
-    justifyContent: 'center',
+  img: {
+    marginTop: 50,
+    height: 300,
+  },
+  title: {
+    fontSize: 30,
+    fontWeight: 'bold',
+    color: '#c6ceff',
+    marginVertical: 30,
+  },
+  list: {
+    alignSelf: 'center',
+  },
+  button: {
+    marginTop: 120,
   },
 });
