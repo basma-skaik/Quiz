@@ -9,7 +9,7 @@ const MainStack = () => {
 
   return (
     <Stack.Navigator
-      initialRouteName="OnBoardingScreen"
+      initialRouteName="QuizScreen"
       screenOptions={{
         headerShown: false,
       }}>
