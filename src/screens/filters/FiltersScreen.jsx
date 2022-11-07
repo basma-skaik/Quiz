@@ -14,6 +14,8 @@ import {
   QuestionsTypeOptions,
 } from '../../utils/filterOptions';
 import Button from '../../shared-copmonents/button/Button';
+import {useAppData} from '../../context/QuizContext';
+import {useNavigation} from '@react-navigation/native';
 
 const FiltersScreen = () => {
   const [category, setCategory] = useState('');
@@ -21,21 +23,26 @@ const FiltersScreen = () => {
   const [difficulty, setDifficulty] = useState('');
   const [QuestionsType, setQuestionsType] = useState('');
 
+  const {fetchQuestions, isLoading, questions} = useAppData();
+
+  const {navigate} = useNavigation();
+
   useEffect(() => {
-    console.log({numOfQues});
-  }, [numOfQues]);
+    questions.length > 0 && navigate('QuizScreen');
+  }, [questions]);
+
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <View style={styles.container}>
         <Text style={styles.mainTitle}>Quiz Filters</Text>
-        <View>
+        <View style={{marginTop: 20}}>
           <Text style={styles.label}>Enter Number Of Questions:</Text>
           <TextInput
             style={styles.input}
             keyboardType="numeric"
+            onChangeText={text => setNumOfQues(text)}
             value={numOfQues}
             defaultValue={10}
-            onChangeText={text => setNumOfQues(text)}
           />
         </View>
         <SelectInput
@@ -53,7 +60,13 @@ const FiltersScreen = () => {
           handleChange={setQuestionsType}
           label="Select Type:"
         />
-        <Button lable={'Start'} />
+        <Button
+          mt={60}
+          lable={isLoading ? 'Loading....' : 'Start'}
+          action={() =>
+            fetchQuestions(numOfQues, category, difficulty, QuestionsType)
+          }
+        />
       </View>
     </TouchableWithoutFeedback>
   );
@@ -66,14 +79,14 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'white',
     paddingHorizontal: 30,
-    paddingTop: 60,
+    paddingTop: 80,
   },
   mainTitle: {
     fontSize: 35,
-    borderBottomColor: 'red',
+    borderBottomColor: '#33539E',
     borderBottomWidth: 1,
     alignSelf: 'flex-start',
-    paddingRight: 8,
+    paddingRight: 12,
     marginBottom: 30,
   },
   label: {
@@ -89,7 +102,8 @@ const styles = StyleSheet.create({
     borderRadius: 6,
     paddingLeft: 8,
     fontSize: 25,
-    backgroundColor: '#CEDFCC',
+    backgroundColor: '#7FACD6',
+    color: 'white',
     marginBottom: 20,
   },
 });

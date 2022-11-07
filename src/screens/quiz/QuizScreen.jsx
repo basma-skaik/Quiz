@@ -8,10 +8,6 @@ const QuizScreen = () => {
   return (
     <View>
       <Text>QuizScreen</Text>
-      <Button
-        lable={'Start'}
-        action={() => navigation.navigate('FiltersScreen')}
-      />
     </View>
   );
 };
