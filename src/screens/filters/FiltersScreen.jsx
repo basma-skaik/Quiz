@@ -5,7 +5,6 @@ import {
   View,
   Keyboard,
   TouchableWithoutFeedback,
-  Pressable,
 } from 'react-native';
 import React, {useEffect, useState} from 'react';
 import SelectInput from '../../shared-copmonents/selectInput/SelectInput';
@@ -49,7 +48,7 @@ const FiltersScreen = () => {
           handleChange={setDifficulty}
           label="Select Difficulty:"
         />
-        <SelectInpu
+        <SelectInput
           options={QuestionsTypeOptions}
           handleChange={setQuestionsType}
           label="Select Type:"
