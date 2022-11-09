@@ -70,8 +70,7 @@ export const QuestionCOM = ({
           action={
             index + 1 === numOfQuestions
               ? () => {
-                  navigate('OnBoardingScreen');
-                  updateScoure(0);
+                  navigate('QuizResultScreen');
                 }
               : () => nextQuestion()
           }
