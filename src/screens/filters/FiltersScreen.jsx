@@ -41,7 +41,7 @@ const FiltersScreen = () => {
             style={styles.input}
             keyboardType="numeric"
             onChangeText={text => setNumOfQues(text)}
-            value={numOfQues}
+            value={numOfQues.toString()}
             defaultValue={10}
           />
         </View>
