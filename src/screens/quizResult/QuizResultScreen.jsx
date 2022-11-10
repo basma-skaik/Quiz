@@ -19,7 +19,9 @@ const QuizResultScreen = () => {
           <Text style={styles.scoureValue}>
             Your final scoure is {scourePers} %
           </Text>
-          <Text style={[styles.msg,{color: '#0c521c'}]}>You're very smart bro! You did amazing</Text>
+          <Text style={[styles.msg, {color: '#0c521c'}]}>
+            You're very smart bro! You did amazing
+          </Text>
         </View>
       );
     } else if (scourePers >= 70) {
@@ -29,7 +31,7 @@ const QuizResultScreen = () => {
           <Text style={styles.scoureValue}>
             Your final scoure is {scourePers} %
           </Text>
-          <Text style={[styles.msg,{color: '#1ac441'}]}>
+          <Text style={[styles.msg, {color: '#1ac441'}]}>
             You have a thinking mind, try study hard next time to get an
             excellent scoure
           </Text>
@@ -42,7 +44,9 @@ const QuizResultScreen = () => {
           <Text style={styles.scoureValue}>
             Your final scoure is {scourePers} %
           </Text>
-          <Text style={[styles.msg,{color: '#dec802'}]}>You can do better next time</Text>
+          <Text style={[styles.msg, {color: '#dec802'}]}>
+            You can do better next time
+          </Text>
         </View>
       );
     } else if (scourePers >= 30) {
@@ -52,7 +56,7 @@ const QuizResultScreen = () => {
           <Text style={styles.scoureValue}>
             Your final scoure is {scourePers} %
           </Text>
-          <Text style={[styles.msg,{color: '#de8a02'}]}>
+          <Text style={[styles.msg, {color: '#de8a02'}]}>
             Sorry, you have to study well next time
           </Text>
         </View>
@@ -64,7 +68,9 @@ const QuizResultScreen = () => {
           <Text style={styles.scoureValue}>
             Your final scoure is {scourePers} %
           </Text>
-          <Text style={[styles.msg,{color: '#de0202'}]}>You're very smart man!</Text>
+          <Text style={[styles.msg, {color: '#de0202'}]}>
+            That's not acceptable, You have to work to yourself!
+          </Text>
         </View>
       );
     }
