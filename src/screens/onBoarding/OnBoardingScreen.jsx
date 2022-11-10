@@ -35,7 +35,12 @@ const OnBoardingScreen = () => {
           <ListItem key={index} text={item} />
         ))}
       </View>
-      <Button action={() => navigate('FiltersScreen')} lable="Get Started" mt={80} w={'80%'} fs={24}/>
+      <Button
+        action={() => navigate('FiltersScreen')}
+        lable="Get Started"
+        mt={80}
+        fs={24}
+      />
     </View>
   );
 };
@@ -48,13 +53,13 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   img: {
-    marginTop: 50,
+    marginVertical: 80,
     height: 300,
   },
   title: {
     fontSize: 30,
     fontWeight: 'bold',
-    color: '#c6ceff',
+    color: '#328ba8',
     marginVertical: 30,
   },
   list: {

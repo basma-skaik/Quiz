@@ -6,11 +6,9 @@ import {
 } from 'react-native';
 import React from 'react';
 
-const Button = ({lable, action, bg, c, mt, mb, w, fs, disabled,style}) => {
+const Button = ({lable, action, bg, c, mt, mb, w, fs, disabled, style}) => {
   const width = useWindowDimensions();
   return (
-    // <TouchableOpacity style={[styles.btnStyle, width]}>
-    // ()=>
     <TouchableOpacity
       disabled={disabled}
       onPress={action}
@@ -20,8 +18,10 @@ const Button = ({lable, action, bg, c, mt, mb, w, fs, disabled,style}) => {
           backgroundColor: bg || '#33539E',
           marginBottom: mb || 0,
           marginTop: mt || 0,
-          width: w || '100%',
-        },style
+          width: w || '60%',
+          alignSelf: 'center',
+        },
+        style,
       ]}>
       <Text
         style={[

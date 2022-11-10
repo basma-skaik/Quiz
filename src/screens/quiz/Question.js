@@ -32,7 +32,10 @@ export const QuestionCOM = ({
         <Text
           style={[
             styles.scoure,
-            {backgroundColor: scoure < 5 ? 'red' : 'green'},
+            {backgroundColor: scoure < 5 ? '#f21f4d' : '#1ae85e'},
+            {borderRadius: 30},
+            {paddingHorizontal: 10},
+            {width: '100%'},
           ]}>
           YOU Got {scoure} / 10
         </Text>
@@ -54,7 +57,7 @@ export const QuestionCOM = ({
                 ? '#23b86d'
                 : isClicked && userAnswer === ans
                 ? '#bd1919'
-                : '#BFB8DA'
+                : '#848a8c'
             }
             disabled={isClicked}
           />

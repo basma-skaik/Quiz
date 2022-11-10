@@ -1,5 +1,5 @@
-import {Alert, Image, StyleSheet, Text, View} from 'react-native';
-import React, {useState} from 'react';
+import {Image, StyleSheet, Text, View} from 'react-native';
+import React from 'react';
 import {useNavigation} from '@react-navigation/native';
 import Button from '../../shared-copmonents/button/Button';
 import {useAppData} from '../../context/QuizContext';
@@ -81,7 +81,6 @@ const QuizResultScreen = () => {
         action={() => navigate('OnBoardingScreen')}
         lable="Reset"
         mt={80}
-        w={'80%'}
         fs={24}
       />
     </View>
@@ -100,7 +99,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 30,
     fontWeight: 'bold',
-    padding: 23,
+    marginTop: -100,
     color: '#33539E',
   },
   ScoureText: {

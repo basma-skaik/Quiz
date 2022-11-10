@@ -10,10 +10,8 @@ const SelectInput = ({options = [], label, handleChange}) => {
         defaultValue={options[0].name}
         renderDropdownIcon={() => <Icon />}
         buttonStyle={styles.buttonST}
-        // rowStyle={{height: 25, backgroundColor: '#CEDFCC'}}
         rowTextStyle={{fontSize: 20}}
         buttonTextStyle={{fontSize: 20, color: 'white'}}
-        // selectedRowStyle={{backgroundColor: 'gray'}}
         data={options.map(opt => opt.name)}
         onSelect={selectedItem =>
           handleChange(options.find(opt => opt.name === selectedItem).value)
@@ -29,7 +27,6 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 24,
     marginBottom: 3,
-    // color:"#051A2D"
   },
   buttonST: {
     width: '100%',
@@ -46,5 +43,8 @@ const styles = StyleSheet.create({
 });
 
 const Icon = () => (
-  <Text style={{transform: [{rotateX: '180deg'}], fontSize: 50}}>^</Text>
+  <Text
+    style={{transform: [{rotateX: '180deg'}], fontSize: 40, marginBottom: -10}}>
+    ^
+  </Text>
 );
