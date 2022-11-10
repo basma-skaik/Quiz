@@ -1,14 +1,9 @@
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import React, {useState} from 'react';
-import Button from '../../shared-copmonents/button/Button';
-import {useNavigation} from '@react-navigation/native';
-import {Data} from './Data';
-
 import {QuestionCOM} from './Question';
-import {Answer} from './Question';
 import {useAppData} from '../../context/QuizContext';
+
 const QuizScreen = () => {
-  const navigation = useNavigation();
   const [Activeindex, setActiveindex] = useState(0);
   const [isClicked, setIsClicked] = useState(false);
   const nextQuestion = () => {
@@ -42,14 +37,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     alignSelf: 'center',
     width: '90%',
-    // justifyContent: 'space-around',
   },
   Qustion: {
     fontWeight: 'bold',
     fontSize: 21,
     color: '#000',
     textAlign: 'center',
-    // marginTop: 80,
   },
   ListContainer: {
     marginTop: -80,
