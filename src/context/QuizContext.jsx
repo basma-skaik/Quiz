@@ -38,6 +38,10 @@ export const AppContextProvider = ({children}) => {
         alert(err);
       });
   };
+  const resetQuiz = () => {
+    setQuestions([]);
+    setScoure(0);
+  };
 
   return (
     <AppContext.Provider
@@ -48,6 +52,7 @@ export const AppContextProvider = ({children}) => {
         isLoading,
         fetchQuestions,
         updateScoure,
+        resetQuiz,
       }}>
       {children}
     </AppContext.Provider>

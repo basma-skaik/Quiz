@@ -12,7 +12,7 @@ const SelectInput = ({options = [], label, handleChange}) => {
         buttonStyle={styles.buttonST}
         // rowStyle={{height: 25, backgroundColor: '#CEDFCC'}}
         rowTextStyle={{fontSize: 20}}
-        buttonTextStyle={{fontSize: 20, color: 'white'}}
+        buttonTextStyle={{fontSize: 20, color: '#000'}}
         // selectedRowStyle={{backgroundColor: 'gray'}}
         data={options.map(opt => opt.name)}
         onSelect={selectedItem =>
@@ -30,13 +30,15 @@ const styles = StyleSheet.create({
     fontSize: 24,
     marginBottom: 3,
     // color:"#051A2D"
+    color: '#92e4f1',
+
   },
   buttonST: {
     width: '100%',
     height: 40,
     padding: 0,
     margin: 0,
-    backgroundColor: '#7FACD6',
+    backgroundColor: '#FFF',
     justifyContent: 'flex-start',
     borderRadius: 6,
     borderColor: 'gray',
@@ -46,5 +48,5 @@ const styles = StyleSheet.create({
 });
 
 const Icon = () => (
-  <Text style={{transform: [{rotateX: '180deg'}], fontSize: 50}}>^</Text>
+  <Text style={{transform: [{rotateX: '180deg'}],  marginTop:10 ,fontSize:40,alignSelf:'center'}}>^</Text>
 );

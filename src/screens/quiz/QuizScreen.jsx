@@ -1,4 +1,4 @@
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {ScrollView, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React, {useState} from 'react';
 import Button from '../../shared-copmonents/button/Button';
 import {useNavigation} from '@react-navigation/native';
@@ -20,7 +20,7 @@ const QuizScreen = () => {
   const {questions} = useAppData();
   console.log(questions);
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <QuestionCOM
         index={Activeindex}
         numOfQuestions={questions.length}
@@ -30,7 +30,7 @@ const QuizScreen = () => {
         setIsClicked={setIsClicked}
         isFinshed={questions.length - 1 === Activeindex}
       />
-    </View>
+    </ScrollView>
   );
 };
 
@@ -39,10 +39,9 @@ export default QuizScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    alignSelf: 'center',
-    width: '90%',
-    // justifyContent: 'space-around',
+    paddingHorizontal:35,
+    backgroundColor:'#264F59',
+    height:800
   },
   Qustion: {
     fontWeight: 'bold',
