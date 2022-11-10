@@ -85,18 +85,21 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     paddingHorizontal: 30,
     paddingTop: 80,
+    backgroundColor: '#264F59',
   },
   mainTitle: {
     fontSize: 35,
-    borderBottomColor: '#33539E',
+    borderBottomColor: '#caaeaa',
     borderBottomWidth: 1,
     alignSelf: 'flex-start',
     paddingRight: 12,
     marginBottom: 30,
+    color: '#caaeaa',
   },
   label: {
     fontSize: 24,
     marginBottom: 3,
+    color: '#92e4f1',
   },
   input: {
     height: 40,
@@ -107,8 +110,8 @@ const styles = StyleSheet.create({
     borderRadius: 6,
     paddingLeft: 8,
     fontSize: 25,
-    backgroundColor: '#7FACD6',
-    color: 'white',
+    backgroundColor: '#FFF',
+    color: '#000',
     marginBottom: 20,
   },
 });
