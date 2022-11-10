@@ -1,20 +1,46 @@
-import {StyleSheet, Text, View, useWindowDimensions} from 'react-native';
-import React from 'react';
+import {StyleSheet, Text, View, Image} from 'react-native';
+import React, {useEffect} from 'react';
+import ListItem from './component/listItem';
+import {useAppData} from '../../context/QuizContext';
 import Button from '../../shared-copmonents/button/Button';
 import {useNavigation} from '@react-navigation/native';
 
 const OnBoardingScreen = () => {
-  const window = useWindowDimensions();
-  const navigation = useNavigation();
+  const {navigate} = useNavigation();
+
+  const {fetchQuestions} = useAppData();
+
+  const listString = [
+    '• Multiple Ways Of Testing 💡',
+    '• Millions Of Questions 👀',
+    '• More And More Categories 📚',
+    '• Clean And Uniqe Style 💅',
+  ];
+
+  useEffect(() => {
+    console.log('Effected....');
+  }, []);
   return (
-    <View style={[styles.container, window.height]}>
-      <Text>OnBoardingScreen</Text>
-      <View style={styles.btnContainer}>
-        <Button
-          lable={'Get started'}
-          action={() => navigation.navigate('QuizScreen')}
-        />
+    <View style={styles.container}>
+      <Image
+        source={require('../../../assets/img/Illustration.png')}
+        style={styles.img}
+        resizeMode={'contain'}
+      />
+      <View>
+        <Text style={styles.title}>Test Your Knowledge</Text>
       </View>
+      <View style={styles.list}>
+        {listString.map((item, index) => (
+          <ListItem key={index} text={item} />
+        ))}
+      </View>
+      <Button
+        action={() => navigate('FiltersScreen')}
+        lable="Get Started"
+        mt={80}
+        fs={24}
+      />
     </View>
   );
 };
@@ -23,11 +49,24 @@ export default OnBoardingScreen;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
     alignItems: 'center',
+    flex: 1,
+    backgroundColor:'#264F59'
   },
-  btnContainer: {
-    justifyContent: 'center',
+  img: {
+    marginVertical: 80,
+    height: 300,
+  },
+  title: {
+    fontSize: 30,
+    fontWeight: 'bold',
+    color: '#328ba8',
+    marginVertical: 30,
+  },
+  list: {
+    alignSelf: 'center',
+  },
+  button: {
+    marginTop: 120,
   },
 });

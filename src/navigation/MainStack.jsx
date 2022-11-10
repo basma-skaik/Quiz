@@ -8,11 +8,11 @@ const MainStack = () => {
   const Stack = createNativeStackNavigator();
 
   return (
-    <Stack.Navigator initialRouteName="OnBoardingScreen"
+    <Stack.Navigator
+      initialRouteName="OnBoardingScreen"
       screenOptions={{
-        headerShown:false
-      }}
-    >
+        headerShown: false,
+      }}>
       <Stack.Screen name="OnBoardingScreen" component={OnBoardingScreen} />
       <Stack.Screen name="FiltersScreen" component={FiltersScreen} />
       <Stack.Screen name="QuizScreen" component={QuizScreen} />
