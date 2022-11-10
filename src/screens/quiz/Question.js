@@ -29,17 +29,19 @@ export const QuestionCOM = ({
 
   return (
     <View>
-      {isFinshed && isClicked && (
+      <View style={{marginVertical: 45}}>
         <Text
           style={[
-            styles.scoure,
-            {backgroundColor: scoure < 5 ? 'red' : 'green'},
+            styles.Question,
+            {
+              padding: 5,
+              alignSelf: 'flex-start',
+              borderWidth: 1,
+              borderRadius: 8,
+              borderColor: '#7FACD6',
+              marginBottom: 20,
+            },
           ]}>
-          YOU Got {scoure} / {numOfQuestions}
-        </Text>
-      )}
-      <View style={{marginVertical: 45}}>
-        <Text style={[styles.Question,{padding:5,alignSelf:'flex-start',borderWidth:1,borderRadius:8,borderColor:'#7FACD6',marginBottom:20}]}>
           Q{index + 1 + '/' + numOfQuestions}
         </Text>
         <Text style={styles.Question}>{question.question}</Text>
@@ -58,7 +60,7 @@ export const QuestionCOM = ({
                 ? '#23b86d'
                 : isClicked && userAnswer === ans
                 ? '#bd1919'
-                : '#BFB8DA'
+                : '#BFB8DA90'
             }
             disabled={isClicked}
           />
@@ -74,8 +76,7 @@ export const QuestionCOM = ({
           action={
             index + 1 === numOfQuestions
               ? () => {
-                  resetQuiz();
-                  navigate('OnBoardingScreen');
+                  navigate('QuizResultScreen');
                 }
               : () => nextQuestion()
           }

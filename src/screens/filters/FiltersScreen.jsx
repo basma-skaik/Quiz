@@ -29,6 +29,11 @@ const FiltersScreen = () => {
 
   useEffect(() => {
     questions.length > 0 && navigate('QuizScreen');
+    return () => {
+      setCategory('');
+      setDifficulty('');
+      setQuestionsType('');
+    };
   }, [questions]);
 
   return (
