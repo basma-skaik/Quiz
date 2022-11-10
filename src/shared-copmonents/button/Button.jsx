@@ -6,19 +6,22 @@ import {
 } from 'react-native';
 import React from 'react';
 
-const Button = ({lable, action, bg, c, mt, mb}) => {
+const Button = ({lable, action, bg, c, mt, mb, w, fs, disabled,pv}) => {
   const width = useWindowDimensions();
   return (
     // <TouchableOpacity style={[styles.btnStyle, width]}>
     // ()=>
     <TouchableOpacity
+      disabled={disabled}
       onPress={action}
       style={[
         styles.btnStyle,
         {
-          backgroundColor: bg || '#33539E',
+          backgroundColor: bg || '#7FACD6',
           marginBottom: mb || 0,
           marginTop: mt || 0,
+          width: w || '100%',
+          paddingVertical: pv ||16
         },
       ]}>
       <Text
@@ -26,6 +29,7 @@ const Button = ({lable, action, bg, c, mt, mb}) => {
           styles.btnLabel,
           {
             color: c || 'white',
+            fontSize: fs || 24,
           },
         ]}>
         {lable}
@@ -41,7 +45,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#6ab6d4',
     paddingVertical: 8,
     borderRadius: 6,
-    width: '100%',
     alignItems: 'center',
     justifyContent: 'center',
   },

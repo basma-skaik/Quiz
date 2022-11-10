@@ -9,7 +9,7 @@ const MainStack = () => {
 
   return (
     <Stack.Navigator
-      initialRouteName="FiltersScreen"
+      initialRouteName="OnBoardingScreen"
       screenOptions={{
         headerShown: false,
       }}>

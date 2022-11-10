@@ -1,11 +1,13 @@
 import {StyleSheet, Text, View, Image} from 'react-native';
 import React, {useEffect} from 'react';
 import ListItem from './component/listItem';
-import Button from './component/Button/Button';
 import {useAppData} from '../../context/QuizContext';
+import Button from '../../shared-copmonents/button/Button';
+import {useNavigation} from '@react-navigation/native';
 
 const OnBoardingScreen = () => {
-  
+  const {navigate} = useNavigation();
+
   const {fetchQuestions} = useAppData();
 
   const listString = [
@@ -33,11 +35,7 @@ const OnBoardingScreen = () => {
           <ListItem key={index} text={item} />
         ))}
       </View>
-      <Button
-        onPress={() => fetchQuestions()}
-        buttonStyle={styles.button}
-        title="Get Started"
-      />
+      <Button action={() => navigate('FiltersScreen')} lable="Get Started" mt={80} w={'80%'} fs={24}/>
     </View>
   );
 };
@@ -48,6 +46,7 @@ const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     flex: 1,
+    backgroundColor:'#264F59'
   },
   img: {
     marginTop: 50,
@@ -56,7 +55,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 30,
     fontWeight: 'bold',
-    color: '#c6ceff',
+    color: '#caaeaa',
     marginVertical: 30,
   },
   list: {
