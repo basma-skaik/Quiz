@@ -46,6 +46,7 @@ const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     flex: 1,
+    backgroundColor:'#264F59'
   },
   img: {
     marginTop: 50,
@@ -54,7 +55,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 30,
     fontWeight: 'bold',
-    color: '#c6ceff',
+    color: '#caaeaa',
     marginVertical: 30,
   },
   list: {

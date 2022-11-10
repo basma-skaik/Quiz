@@ -15,7 +15,7 @@ export const QuestionCOM = ({
 }) => {
   const {navigate} = useNavigation();
   const [userAnswer, setUserAnswer] = useState('');
-  const {updateScoure, scoure} = useAppData();
+  const {updateScoure, scoure, resetQuiz} = useAppData();
 
   const allAnswers = [
     ...question.incorrect_answers,
@@ -26,20 +26,26 @@ export const QuestionCOM = ({
     setIsClicked(true);
     if (question.correct_answer === ua) updateScoure(1);
   };
+
   return (
     <View>
-      {isFinshed && isClicked && (
+      <View style={{marginVertical: 45}}>
         <Text
           style={[
-            styles.scoure,
-            {backgroundColor: scoure < 5 ? 'red' : 'green'},
+            styles.Question,
+            {
+              padding: 5,
+              alignSelf: 'flex-start',
+              borderWidth: 1,
+              borderRadius: 8,
+              borderColor: '#7FACD6',
+              marginBottom: 20,
+            },
           ]}>
-          YOU Got {scoure} / 10
+          Q{index + 1 + '/' + numOfQuestions}
         </Text>
-      )}
-      <Text style={styles.Question}>
-        {index + 1 + '/' + numOfQuestions + ' ' + question.question}
-      </Text>
+        <Text style={styles.Question}>{question.question}</Text>
+      </View>
       <View style={styles.allAnswers}>
         {allAnswers.map(ans => (
           <Button
@@ -54,7 +60,7 @@ export const QuestionCOM = ({
                 ? '#23b86d'
                 : isClicked && userAnswer === ans
                 ? '#bd1919'
-                : '#BFB8DA'
+                : '#BFB8DA90'
             }
             disabled={isClicked}
           />
@@ -62,11 +68,11 @@ export const QuestionCOM = ({
       </View>
       <View>
         <Button
+          mb={60}
           disabled={!isClicked}
           lable={isFinshed ? 'Finsh Quiz' : 'Next Question'}
-          bg="#53a3d1"
-          c="#f6ffff"
-          fS="22"
+          fs={24}
+          mt={100}
           action={
             index + 1 === numOfQuestions
               ? () => {
@@ -81,14 +87,11 @@ export const QuestionCOM = ({
 };
 const styles = StyleSheet.create({
   Question: {
-    fontSize: 18,
-    color: '#252525',
-    marginTop: 100,
-    textAlign: 'center',
+    fontSize: 22,
+    color: '#FFF',
+    textAlign: 'left',
   },
-  allAnswers: {
-    marginVertical: 50,
-  },
+
   Answer: {
     marginVertical: 20,
   },

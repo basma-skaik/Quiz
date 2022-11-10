@@ -11,10 +11,6 @@ export const AppContextProvider = ({children}) => {
     value === 0 ? setScoure(0) : setScoure(prev => prev + 1);
   };
 
-  const resetQuiz = () => {
-    setQuestions([]);
-    setScoure(0);
-  };
 
   const fetchQuestions = (
     numOfQues = 10,
@@ -42,6 +38,10 @@ export const AppContextProvider = ({children}) => {
         setIsLoading(false);
         alert(err);
       });
+  };
+  const resetQuiz = () => {
+    setQuestions([]);
+    setScoure(0);
   };
 
   return (

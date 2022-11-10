@@ -6,7 +6,7 @@ import {
 } from 'react-native';
 import React from 'react';
 
-const Button = ({lable, action, bg, c, mt, mb, w, fs, disabled,style}) => {
+const Button = ({lable, action, bg, c, mt, mb, w, fs, disabled,pv}) => {
   const width = useWindowDimensions();
   return (
     // <TouchableOpacity style={[styles.btnStyle, width]}>
@@ -17,18 +17,19 @@ const Button = ({lable, action, bg, c, mt, mb, w, fs, disabled,style}) => {
       style={[
         styles.btnStyle,
         {
-          backgroundColor: bg || '#33539E',
+          backgroundColor: bg || '#7FACD6',
           marginBottom: mb || 0,
           marginTop: mt || 0,
           width: w || '100%',
-        },style
+          paddingVertical: pv ||16
+        },
       ]}>
       <Text
         style={[
           styles.btnLabel,
           {
             color: c || 'white',
-            fontSize: fs || 18,
+            fontSize: fs || 24,
           },
         ]}>
         {lable}
