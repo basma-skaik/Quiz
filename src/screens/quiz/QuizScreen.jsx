@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 import {StyleSheet, View} from 'react-native';
-=======
-import {ScrollView, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
->>>>>>> 09b4a69bec891198fe2db7650aaae0c0f4161983
+import {ScrollView, StyleSheet, View} from 'react-native';
 import React, {useState} from 'react';
 import {QuestionCOM} from './Question';
 import {useAppData} from '../../context/QuizContext';
@@ -38,15 +35,9 @@ export default QuizScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-<<<<<<< HEAD
     alignItems: 'center',
     alignSelf: 'center',
     width: '90%',
-=======
-    paddingHorizontal:35,
-    backgroundColor:'#264F59',
-    height:800
->>>>>>> 09b4a69bec891198fe2db7650aaae0c0f4161983
   },
   Qustion: {
     fontWeight: 'bold',
